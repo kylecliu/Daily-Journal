@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+<% for(let i = posts.length - 1;i >= 0 ;i--) { %>
+    <% let count = 300; %>
+    <% let content = posts[i].blogBody; %>
+
+    <% let displayedContent = content.slice(0, count) + (content.length > count? "..." : ""); %>
+
+    <h1><%= posts[i].blogTitle %></h1>
+    <p><%= displayedContent %>
+        <a href= "/posts/<%= posts[i].blogTitle %>">Read More</a>
+    </p>
+
+<% } %>
+
+<%- include("partials/footer") -%>
